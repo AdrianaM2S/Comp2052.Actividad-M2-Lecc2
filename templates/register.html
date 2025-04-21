@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <title>Record</title>
+
+    <link 
+      rel="stylesheet" 
+      href="../static/styles.css" 
+    /> 
+</head>
+
+<body> 
+    <h1>Registration Form</h1>
+
+    <!-- Defines a form that sends data via a POST request -->
+    <form method="POST"> 
+
+        <div class="left"> <!-- Style for box-->
+             <!-- Give space between name,email,password and submit button-->
+            <div class="margin">
+        <!-- Code to enter name-->
+        {{ form.hidden_tag() }} 
+        {{ form.name.label }} 
+        {{ form.name }} 
+        {% for error in form.name.errors %}
+        <p style="color: red;">{{ error }}</p> 
+        {% endfor %}
+            </div>
+
+            <div class="margin">
+        <!-- Code to enter email-->
+        {{ form.email.label }} 
+        {{ form.email }} 
+        {% for error in form.email.errors %} 
+        <p style="color: red;">{{ error }}
+        {% endfor %}
+            </div>
+
+            <div class="margin">
+        <!-- Code to enter password-->
+        {{ form.password.label }} 
+        {{ form.password }} 
+        {% for error in form.password.errors %}
+        <p style="color: red;">{{ error }}
+        {% endfor %}
+            </div>
+
+            <div class="margin">
+        <!-- Code for submit button -->
+        {{ form.submit }} 
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>

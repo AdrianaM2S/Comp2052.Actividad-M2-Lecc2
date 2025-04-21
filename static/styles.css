@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+/* Style for the box */
+.left {
+    position: static;
+    width: 200px;
+    border: 3px solid #2237c2;
+    padding: 10px;
+}
+/* Give space between name,email,password and submit button */
+.margin {
+    margin: 10px;
+}
