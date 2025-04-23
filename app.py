@@ -1,7 +1,7 @@
 # Import necessary modules from Flask and WTForms
 from flask import Flask, render_template 
 from flask_wtf import FlaskForm  
-from wtforms import StringField, PasswordField, SubmitField  
+from wtforms import StringField, PasswordField, SubmitField, EmailField
 from wtforms.validators import DataRequired, Email, Length 
 
 # Initialize Flask application
@@ -12,7 +12,7 @@ app.config["SECRET_KEY"] = "secret_key"
 # Define the user registration form
 class RegisterForm(FlaskForm):  
     name = StringField("Name", validators=[DataRequired(), Length(min=3)])
-    email = StringField("Email", validators=[DataRequired(), Email()])
+    email = EmailField("Email", validators=[DataRequired(), Email()])
     password = PasswordField("Password", validators=[DataRequired(), Length(min=6)])
     submit = SubmitField("Register")
 
